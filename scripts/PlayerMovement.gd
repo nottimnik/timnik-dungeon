@@ -26,4 +26,4 @@ func _physics_process(delta):
 	else:
 		vector = vector.move_toward(Vector2.ZERO, FRICTION * delta) #apply friction to the player when he stops
 		
-	move_and_collide(vector * delta) #move the player
+	vector = move_and_slide(vector) #move the player
