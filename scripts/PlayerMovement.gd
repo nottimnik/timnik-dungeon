@@ -1,16 +1,22 @@
 extends KinematicBody2D
 
+var vector = Vector2.ZERO
+
 #Basic Player Movement
 
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_right"): #if the right key is pressed
-		position.x += 10 #we move the player to the right
+	
+	var input_vector = Vector2.ZERO
+	
+	#move the player left or right if the right or the left key is pressed
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	
+	#checks if the user pressed any key by checking if the input_vector is changed or not
+	if input_vector != Vector2.ZERO:
+		vector = input_vector
+	#if the user didn't pressed any key then we don't update the vector
+	else:
+		vector = Vector2.ZERO
 		
-	elif Input.is_action_pressed("ui_left"): #if the left key is pressed
-		position.x -= 10 #we move the player to the left
-		
-	elif Input.is_action_pressed("ui_up"): #if the up key is pressed
-		position.y -= 10 #we move the player up
-
-	elif Input.is_action_pressed("ui_down"): #if the down key is pressed
-		position.y += 10 #we move the player down
+	move_and_collide(vector) #move the player
