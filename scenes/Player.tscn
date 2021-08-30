@@ -43,7 +43,6 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 16, 8 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -64,3 +63,6 @@ texture = ExtResource( 2 )
 hframes = 28
 vframes = 9
 frame = 140
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

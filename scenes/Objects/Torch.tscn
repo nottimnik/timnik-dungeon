@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/v1.1 dungeon crawler 16x16 pixel pack/props_itens/torch_spritesheet.png" type="Texture" id=1]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Main"
 length = 0.6
 loop = true
@@ -26,4 +26,4 @@ frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Main"
-anims/Main = SubResource( 2 )
+anims/Main = SubResource( 1 )

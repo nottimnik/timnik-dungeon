@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/v1.1 dungeon crawler 16x16 pixel pack/props_itens/potion_yellow.png" type="Texture" id=1]
+
+[node name="Potion Yellow" type="Sprite"]
+texture = ExtResource( 1 )
